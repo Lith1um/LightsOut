@@ -18,6 +18,9 @@ import { HomeComponent } from './components/home/home.component';
         } @else {
           <app-home (startGame)="gameService.initBoard($event)"></app-home>
         }
+
+        <p>© 2024 Alex Rayner</p>
+        <p>Check out the code on <a href="https://github.com/Lith1um/LightsOut" target="_blank">GitHub.</a></p>
       </div>
     </div>
   `,
@@ -29,6 +32,7 @@ import { HomeComponent } from './components/home/home.component';
     }
 
     .container {
+      background-color: white;
       border: 2px solid #C2C2C2;
       border-radius: 0.25rem;
       padding: 1rem;
@@ -36,7 +40,15 @@ import { HomeComponent } from './components/home/home.component';
     }
 
     h2 {
+      margin-top: 0.5rem;
       text-align: center;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+    p:last-child {
+      margin-top: 0;
     }
   `],
   changeDetection: ChangeDetectionStrategy.OnPush

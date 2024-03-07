@@ -5,10 +5,8 @@ import { GridCell } from '../../interfaces/grid-cell.interface';
   selector: 'app-cell',
   standalone: true,
   template: `
-    @if (data(); as cell) {
-      <div class="cell" [class.illuminated]="cell.illuminated" (click)="toggled.emit()">
-      </div>
-    }
+    <div class="cell" [class.illuminated]="data().illuminated" (click)="toggled.emit()">
+    </div>
   `,
   styles: [`
     .cell {
@@ -16,6 +14,7 @@ import { GridCell } from '../../interfaces/grid-cell.interface';
       cursor: pointer;
       background-color: #C2C2C2;
       border-radius: 10%;
+      transition: background-color 200ms;
     }
     .illuminated {
       background-color: #F57A80;
